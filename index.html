@@ -6,6 +6,9 @@
 <title>The Unread Manifesto</title>
 <meta name="description" content="Software quality never depended on reading every line. A case for Policy-Driven Development.">
 <link rel="canonical" href="https://theunread.dev/">
+<link rel="alternate" hreflang="en" href="https://theunread.dev/">
+<link rel="alternate" hreflang="es" href="https://theunread.dev/es/">
+<link rel="alternate" hreflang="x-default" href="https://theunread.dev/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://theunread.dev/">
 <meta property="og:title" content="The Unread Manifesto">
@@ -127,9 +130,22 @@
   }
   footer a { color: inherit; }
   a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .lang {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .lang a { color: var(--muted); text-decoration: none; }
+  .lang a:hover { color: var(--accent); }
+  .lang [aria-current] { color: var(--fg); font-weight: 700; }
 </style>
 </head>
 <body>
+<nav class="lang" aria-label="Language"><span aria-current="page">EN</span> / <a href="/es/" hreflang="es" lang="es">ES</a></nav>
 <main>
   <header>
     <h1>The Unread Manifesto</h1>
