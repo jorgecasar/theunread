@@ -153,13 +153,13 @@
     <p class="subtitle">En defensa del Policy-Driven Development</p>
   </header>
 
-  <p class="lead">La calidad del software nunca ha dependido de que alguien lea cada línea. Depende de que el sistema garantice que lo que sale es bueno.</p>
-  <p>La IA ya escribe buena parte de nuestro código, documentos y planes. Nadie lee el código máquina que genera un compilador, y ningún CTO lee todo el código de su equipo. No hace falta mirar más, hace falta controlar mejor.</p>
+  <p class="lead">La calidad del software no depende de que una persona lea cada línea, sino de que el sistema garantice que lo que sale es bueno y correcto.</p>
+  <p>La IA ya escribe gran parte de nuestro código, documentos y planes. Igual que nadie lee el código máquina que genera un compilador, y ningún CTO lee todo el código de su equipo, no hace falta mirar más, hace falta garantizar mejor.</p>
 
   <h2>Valoramos</h2>
   <ul class="values">
     <li><strong>Resultados verificados</strong> <span>sobre líneas leídas</span></li>
-    <li><strong>Especificación clara</strong> <span>sobre prompts improvisados</span></li>
+    <li><strong>Especificación clara</strong> <span>sobre specs detalladas</span></li>
     <li><strong>Controles en el sistema</strong> <span>sobre confiar en la buena voluntad</span></li>
     <li><strong>Criterio humano en el qué</strong> <span>sobre revisión humana del cómo</span></li>
     <li><strong>Mejorar el sistema</strong> <span>sobre parchear el resultado</span></li>
@@ -169,7 +169,7 @@
   <h2>Creemos</h2>
   <ul class="beliefs">
     <li><strong>La calidad nunca ha dependido de leerlo todo.</strong> Ningún equipo lo ha hecho. Delegamos en personas con tests, criterios de aceptación y responsables. Con la IA es igual.</li>
-    <li><strong>No hay dos desarrolladores que escriban el mismo código.</strong> Lo que importa no es cómo está escrito, sino que cumpla lo especificado y se pueda cambiar con seguridad.</li>
+    <li><strong>No hay dos desarrolladores que escriban el mismo código.</strong> Lo que importa no es cómo está escrito, sino que cumpla lo especificado y se pueda cambiar con seguridad. Por eso las propiedades del diseño también forman parte del contrato.</li>
     <li><strong>El código pasa a ser un producto intermedio,</strong> como lo fue el ensamblador. Lo que mantenemos de verdad es la especificación, los tests y las reglas.</li>
     <li><strong>El problema no es lo que nadie ha leído, sino lo que nadie puede verificar.</strong> Algo que pasa buenos controles no es slop aunque nadie lo haya leído. Algo que nadie puede comprobar sí lo es, lo haya hecho una persona o un modelo.</li>
     <li><strong>Leer más no escala.</strong> Un agente produce en un día más de lo que una persona revisa en meses. Solo escala la revisión que está en el propio sistema.</li>
@@ -181,8 +181,9 @@
     <li><strong>Especificar antes de generar:</strong> qué tiene que hacer, cómo se comprueba y qué no puede romperse.</li>
     <li><strong>Tratar los tests como el contrato.</strong> Si un módulo se puede regenerar sin tocar sus tests, el código se puede sustituir.</li>
     <li><strong>No dejar entrar nada sin pasar controles:</strong> tests, mutation testing, análisis estático y revisión cruzada entre modelos distintos.</li>
+    <li><strong>Verificar también los controles:</strong> que sean independientes de quien genera, medir si detectan los fallos y mejorarlos como el resto del sistema.</li>
     <li><strong>Poner las reglas en el sistema, no en el prompt.</strong> Una instrucción se puede ignorar. Un control que bloquea, no.</li>
-    <li><strong>Dejar por escrito lo que no se negocia.</strong> Un fallo de seguridad se arregla, no se discute.</li>
+    <li><strong>Dejar por escrito lo que no se negocia.</strong> Un fallo de seguridad confirmado se arregla, no se discute.</li>
     <li><strong>Registrar cada excepción:</strong> quién la concede, qué regla se salta, por qué y hasta cuándo.</li>
     <li><strong>Cambiar el sistema cuando un error aparece dos veces,</strong> no solo el resultado.</li>
     <li><strong>Intervenir donde las personas aportan:</strong> cuando los controles no se ponen de acuerdo, cuando hay que decidir qué se hace y cuando algo no tiene vuelta atrás.</li>
