@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Unread Manifesto</title>
+<meta name="description" content="Software quality never depended on reading every line. A case for Policy-Driven Development.">
+<link rel="canonical" href="https://theunread.dev/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theunread.dev/">
+<meta property="og:title" content="The Unread Manifesto">
+<meta property="og:description" content="Software quality never depended on reading every line. A case for Policy-Driven Development.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Unread Manifesto">
+<meta name="twitter:description" content="Software quality never depended on reading every line. A case for Policy-Driven Development.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23111'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23f2efe8'%3EU%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f6f3ec;
+    --fg: #1a1a1a;
+    --muted: #6b665c;
+    --rule: #d9d3c5;
+    --accent: #b5341f;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141414;
+      --fg: #ece8df;
+      --muted: #9a958a;
+      --rule: #2e2c28;
+      --accent: #e0654c;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 3rem;
+  }
+  header { margin-bottom: 3.5rem; }
+  h1 {
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+  }
+  .subtitle {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.25rem;
+    margin: 0;
+  }
+  .lead {
+    font-size: 1.35rem;
+    line-height: 1.5;
+    margin: 0 0 1rem;
+  }
+  h2 {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 4rem 0 1.25rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .values {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+  .values li {
+    font-size: clamp(1.25rem, 3.6vw, 1.6rem);
+    line-height: 1.35;
+    padding: 0.55rem 0;
+  }
+  .values strong { font-weight: 600; }
+  .values span { color: var(--muted); }
+  .note { color: var(--muted); font-style: italic; }
+  .beliefs { padding-left: 1.1rem; margin: 0; }
+  .beliefs li { margin-bottom: 1rem; }
+  .commitments { padding-left: 1.6rem; margin: 0; }
+  .commitments li { margin-bottom: 0.9rem; padding-left: 0.3rem; }
+  .commitments li::marker { color: var(--accent); font-family: var(--sans); font-weight: 700; }
+  .closing { font-size: 1.3rem; line-height: 1.5; }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2.5rem 0 0;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+  }
+  .actions a {
+    display: inline-block;
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--fg);
+    border-radius: 999px;
+    color: var(--fg);
+    text-decoration: none;
+  }
+  .actions a.primary { background: var(--fg); color: var(--bg); }
+  .actions a:hover { border-color: var(--accent); }
+  .actions a.primary:hover { background: var(--accent); border-color: var(--accent); }
+  footer {
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  footer a { color: inherit; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>The Unread Manifesto</h1>
+    <p class="subtitle">A case for Policy-Driven Development</p>
+  </header>
+
+  <p class="lead">Software quality has never depended on someone reading every line. It depends on a system that guarantees what comes out is good.</p>
+  <p>AI already writes much of our code, docs and plans. Nobody reads the machine code a compiler emits, and no CTO reads all of their team's code. We don't need to look harder. We need to control better.</p>
+
+  <h2>We value</h2>
+  <ul class="values">
+    <li><strong>Verified outcomes</strong> <span>over lines read</span></li>
+    <li><strong>Clear specifications</strong> <span>over improvised prompts</span></li>
+    <li><strong>Controls in the system</strong> <span>over trust in good intentions</span></li>
+    <li><strong>Human judgement on the what</strong> <span>over human review of the how</span></li>
+    <li><strong>Improving the system</strong> <span>over patching the output</span></li>
+  </ul>
+  <p class="note">While there is value in the items on the right, we value the items on the left more.</p>
+
+  <h2>We believe</h2>
+  <ul class="beliefs">
+    <li><strong>Quality never depended on reading everything.</strong> No team ever did. We delegate to people with tests, acceptance criteria and someone accountable. AI is no different.</li>
+    <li><strong>No two developers write the same code.</strong> What matters is not how it's written, but that it does what was specified and can be changed safely.</li>
+    <li><strong>Code is becoming an intermediate artifact,</strong> like assembly once was. What we really maintain is the specification, the tests and the rules.</li>
+    <li><strong>The problem isn't what nobody read. It's what nobody can verify.</strong> Work that passes good controls isn't slop, even if no one read it. Work no one can check is, whether a person or a model made it.</li>
+    <li><strong>Reading more doesn't scale.</strong> An agent produces in a day more than a person can review in months. The only review that scales is the one built into the system.</li>
+    <li><strong>People are essential where there's no substitute:</strong> understanding the domain, deciding what to build, specifying it well and answering for the result.</li>
+  </ul>
+
+  <h2>We commit to</h2>
+  <ol class="commitments">
+    <li><strong>Specify before generating:</strong> what it must do, how it's checked and what must never break.</li>
+    <li><strong>Treat tests as the contract.</strong> If a module can be regenerated without touching its tests, the code is replaceable.</li>
+    <li><strong>Let nothing in without passing controls:</strong> tests, mutation testing, static analysis and cross-review between different models.</li>
+    <li><strong>Put rules in the system, not in the prompt.</strong> An instruction can be ignored. A blocking check can't.</li>
+    <li><strong>Write down what is non-negotiable.</strong> A security flaw gets fixed, not debated.</li>
+    <li><strong>Record every exception:</strong> who granted it, which rule it bypasses, why and until when.</li>
+    <li><strong>Change the system when a mistake shows up twice,</strong> not just the output.</li>
+    <li><strong>Step in where people add value:</strong> when controls disagree, when deciding what to build and when something can't be undone.</li>
+    <li><strong>Measure what matters:</strong> what works in production and who it helps, not lines, PRs or tokens.</li>
+    <li><strong>Own what we ship,</strong> whoever wrote it.</li>
+  </ol>
+
+  <h2>In short</h2>
+  <p class="closing">We don't ask for blind trust in AI, nor reflexive distrust. We ask for what has always worked with any team: clear intent, controls that don't depend on good will, and someone accountable for the result. The rest, the machine can do.</p>
+
+  <div class="actions">
+    <a class="primary" href="https://github.com/manufosela/theunread/blob/main/SIGNATORIES.md">Sign the manifesto</a>
+    <a href="https://github.com/manufosela/theunread">Propose a change</a>
+  </div>
+
+  <footer>
+    <p>Written by Mánu Fosela, November 2026. Open to the community on <a href="https://github.com/manufosela/theunread">GitHub</a>.</p>
+  </footer>
+</main>
+</body>
+</html>
